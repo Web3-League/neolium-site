@@ -2,11 +2,10 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { useForm, ValidationError } from "@formspree/react";
+import Link from "next/link";
+import ContactSection from "@/components/ContactSection";
 
 export default function LandingPage() {
-  const [state, handleSubmit] = useForm("xnnpklpk");
-
   return (
     <>
       <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white flex flex-col items-center justify-center px-6">
@@ -35,9 +34,11 @@ export default function LandingPage() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="flex gap-4"
         >
-          <Button className="text-lg px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 shadow-lg transition-transform hover:scale-105">
-            Découvrir
-          </Button>
+          <a href="#decouvrir">
+            <Button className="text-lg px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 shadow-lg transition-transform hover:scale-105">
+              Découvrir
+            </Button>
+          </a>
           <a href="#contact">
             <Button
               variant="outline"
@@ -50,53 +51,66 @@ export default function LandingPage() {
       </main>
 
       <section
-        id="contact"
-        className="py-20 bg-gray-900 text-white text-center"
+        id="decouvrir"
+        className="py-20 bg-gray-800 text-white px-6"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Contactez-nous</h2>
-
-        {state.succeeded ? (
-          <p className="text-green-400 text-xl">Merci pour votre message !</p>
-        ) : (
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto px-4">
-            <input
-              id="email"
-              type="email"
-              name="email"
-              placeholder="Votre email"
-              required
-              className="block w-full mb-4 px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-            <ValidationError
-              prefix="Email"
-              field="email"
-              errors={state.errors}
-            />
-
-            <textarea
-              id="message"
-              name="message"
-              placeholder="Votre message"
-              required
-              className="block w-full mb-4 px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              rows={5}
-            />
-            <ValidationError
-              prefix="Message"
-              field="message"
-              errors={state.errors}
-            />
-
-            <button
-              type="submit"
-              disabled={state.submitting}
-              className="px-6 py-3 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 transition-transform hover:scale-105 shadow-lg"
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">Nos Solutions</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="bg-gray-700 p-8 rounded-xl shadow-lg"
             >
-              Envoyer
-            </button>
-          </form>
-        )}
+              <h3 className="text-2xl font-bold mb-4 text-indigo-400">Développement Web</h3>
+              <p className="text-gray-200 mb-6">
+                Création de sites web et d'applications robustes, modernes et optimisés pour tous les appareils.
+              </p>
+              <Link href="/web-development">
+                <Button variant="outline" className="w-full">En savoir plus</Button>
+              </Link>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gray-700 p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-indigo-400">Solutions Cloud</h3>
+              <p className="text-gray-200 mb-6">
+                Infrastructure évolutive et sécurisée pour vos applications critiques et vos données sensibles.
+              </p>
+              <Link href="/cloud-solutions">
+                <Button variant="outline" className="w-full">En savoir plus</Button>
+              </Link>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-gray-700 p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-indigo-400">Intelligence Artificielle</h3>
+              <p className="text-gray-200 mb-6">
+                Intégration de solutions IA personnalisées pour automatiser et optimiser vos processus métier.
+              </p>
+              <Link href="/ai">
+                <Button variant="outline" className="w-full">En savoir plus</Button>
+              </Link>
+            </motion.div>
+          </div>
+        </div>
       </section>
+
+      {/* Nouvelle section de contact remplaçant l'ancienne */}
+      <ContactSection />
     </>
   );
 }

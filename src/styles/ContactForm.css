@@ -1,0 +1,193 @@
+/* src/styles/ContactForm.css - à importer dans globals.css */
+
+/**
+ * STYLES DU FORMULAIRE DE CONTACT
+ */
+
+/* Container principal */
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(31, 41, 55, 0.6); /* Gris semi-transparent */
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(99, 102, 241, 0.2); /* Bordure indigo très subtile */
+}
+
+/* Titres */
+.contact-heading {
+  font-size: 2.25rem !important;
+  font-weight: 700 !important;
+  text-align: center;
+  margin-bottom: 1rem !important;
+  color: #fff !important;
+}
+
+.contact-subheading {
+  font-size: 1.125rem !important;
+  text-align: center;
+  margin-bottom: 2rem !important;
+  color: #d1d5db !important;
+  max-width: 500px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Formulaire */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 1.125rem !important;
+  font-weight: 500 !important;
+  color: #e5e7eb !important;
+}
+
+.form-input,
+.form-textarea {
+  padding: 1rem;
+  font-size: 1.125rem !important;
+  color: #f3f4f6 !important;
+  background-color: rgba(31, 41, 55, 0.8) !important;
+  border: 1px solid rgba(156, 163, 175, 0.3) !important;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none !important;
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-error {
+  color: #ef4444 !important;
+  font-size: 0.875rem !important;
+  margin-top: 0.25rem !important;
+}
+
+/* Case à cocher */
+.form-checkbox {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.form-checkbox-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.25rem; /* Alignement vertical avec le texte */
+  accent-color: #6366f1;
+}
+
+.form-checkbox-label {
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  color: #d1d5db !important;
+}
+
+/* Bouton d'envoi */
+.submit-button {
+  background-color: #6366f1 !important;
+  color: white !important;
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  padding: 0.875rem 1.5rem !important;
+  border-radius: 0.5rem !important;
+  transition: all 0.3s ease !important;
+  margin-top: 0.5rem !important;
+  box-shadow: 0 4px 6px rgba(99, 102, 241, 0.25) !important;
+}
+
+.submit-button:hover {
+  background-color: #4f46e5 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 10px rgba(99, 102, 241, 0.3) !important;
+}
+
+.submit-button:disabled {
+  background-color: #818cf8 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* Message de succès */
+.success-message {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: rgba(52, 211, 153, 0.1);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.success-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #34d399;
+  margin: 0 auto 1.5rem auto;
+}
+
+.success-message h3 {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #f3f4f6 !important;
+  margin-bottom: 1rem !important;
+}
+
+.success-message p {
+  font-size: 1.125rem !important;
+  color: #d1d5db !important;
+  margin-bottom: 0 !important;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .contact-form-container {
+    padding: 1.5rem;
+  }
+  
+  .contact-heading {
+    font-size: 1.875rem !important;
+  }
+  
+  .contact-subheading {
+    font-size: 1rem !important;
+  }
+  
+  .form-label {
+    font-size: 1rem !important;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 0.875rem;
+    font-size: 1rem !important;
+  }
+  
+  .submit-button {
+    font-size: 1rem !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+}
