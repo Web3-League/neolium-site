@@ -1,0 +1,129 @@
+/* src/styles/Footer.css - à importer dans globals.css */
+
+/**
+ * STYLES DU FOOTER
+ */
+
+.footer-container {
+  background-color: #0f172a; /* Bleu très foncé */
+  color: #e2e8f0;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  border-top: 1px solid #1e293b; /* Ligne séparatrice subtile */
+}
+
+.footer-content {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer-logo {
+  font-size: 1.75rem !important;
+  font-weight: 700;
+  color: #a5b4fc !important; /* Même couleur indigo que dans le site */
+  margin-bottom: 0.5rem !important;
+}
+
+.footer-tagline {
+  font-size: 1rem !important;
+  color: #94a3b8 !important;
+  max-width: 100% !important; /* Annule la contrainte de largeur */
+  margin-bottom: 1rem !important;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.footer-heading {
+  font-size: 1.25rem !important;
+  font-weight: 600;
+  margin-bottom: 1.25rem !important;
+  color: #e2e8f0 !important;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem !important;
+  line-height: normal !important;
+}
+
+.footer-list li a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-list li a:hover {
+  color: #a5b4fc;
+}
+
+.footer-contact p {
+  font-size: 1.125rem !important;
+  color: #94a3b8 !important;
+  margin-bottom: 0.75rem !important;
+  max-width: 100% !important; /* Annule la contrainte de largeur */
+  line-height: 1.5 !important;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1e293b;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 1.125rem !important;
+  color: #64748b !important;
+  margin-bottom: 0 !important;
+  max-width: 100% !important; /* Annule la contrainte de largeur */
+}
+
+/* Adaptation responsive */
+@media (max-width: 1024px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-content {
+    max-width: 90%;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-heading {
+    margin-bottom: 1rem !important;
+  }
+}
